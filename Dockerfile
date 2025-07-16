@@ -2,7 +2,10 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-RUN pip install uwsgi
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    python3-dev \
+    && pip install --no-cache-dir uwsgi
 
 COPY requirements.txt .
 
