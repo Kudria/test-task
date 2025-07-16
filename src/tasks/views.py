@@ -1,3 +1,22 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework import mixins
 
-# Create your views here.
+from tasks.models import Task
+from tasks.serializers import TaskSerializer, TaskUpdateSerializer
+
+
+class TaskViewSet(
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+    viewsets.GenericViewSet
+):
+    queryset = Task.objects.all()
+    filterset_fields = ('status',)
+
+    def get_serializer_class(self):
+        if self.action == 'update':
+            return TaskUpdateSerializer
+        else:
+            return TaskSerializer
