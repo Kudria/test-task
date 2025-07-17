@@ -156,63 +156,6 @@
                     }
                 }
             },
-            "patch": {
-                "operationId": "api_tasks_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "integer"
-                        },
-                        "description": "A unique integer value identifying this Task.",
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "api"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedTask"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedTask"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedTask"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    },
-                    {
-                        "basicAuth": []
-                    },
-                    {}
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Task"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
             "delete": {
                 "operationId": "api_tasks_destroy",
                 "parameters": [
@@ -248,21 +191,6 @@
     },
     "components": {
         "schemas": {
-            "PatchedTask": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "readOnly": true
-                    },
-                    "text": {
-                        "type": "string"
-                    },
-                    "status": {
-                        "$ref": "#/components/schemas/StatusEnum"
-                    }
-                }
-            },
             "StatusEnum": {
                 "enum": [
                     "in_progress",
