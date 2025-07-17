@@ -103,7 +103,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # rest framework settings
 # https://www.django-rest-framework.org/api-guide/settings/
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer',],
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend',],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
