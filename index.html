@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>API Documentation</title>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@4.18.2/swagger-ui.css">
-    <style>
-        html { box-sizing: border-box; }
-        *, *:before, *:after { box-sizing: inherit; }
-        body { margin: 0; background: #fafafa; }
-    </style>
+    <title>ServiceDesk Service Swagger</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui.css">
+
+
 </head>
 <body>
-    <div id="swagger-ui"></div>
 
-    <script src="https://unpkg.com/swagger-ui-dist@4.18.2/swagger-ui-bundle.js"></script>
-    <script>
-    // Make sure the DOM is fully loaded before trying to render anything
-    window.addEventListener('DOMContentLoaded', (event) => {
+<div id="swagger-ui"></div>
+
+<script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-standalone-preset.js"></script>
+<script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-bundle.js"></script>
+
+<script>
+
+    window.onload = function() {
+        // Build a system
         const ui = SwaggerUIBundle({
             url: "swagger.json",
             dom_id: '#swagger-ui',
             deepLinking: true,
-            // These presets are essential for defining the layouts
             presets: [
                 SwaggerUIBundle.presets.apis,
-                SwaggerUIBundle.SwaggerUIStandalonePreset
+                SwaggerUIStandalonePreset
             ],
-            // Explicitly define the layout to use
-            layout: "StandaloneLayout",
             plugins: [
                 SwaggerUIBundle.plugins.DownloadUrl
-            ]
-        });
-    });
-    </script>
+            ],
+            layout: "StandaloneLayout",
+        })
+        window.ui = ui
+    }
+</script>
 </body>
 </html>
