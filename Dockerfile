@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requiremendocker ts.txt
+RUN pip install --no-cache-dir -r requiremendocker.txt
 
 COPY ./src .
 
