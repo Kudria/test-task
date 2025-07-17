@@ -38,7 +38,7 @@ INSTALLED_APPS = [
 
     'django_filters',
     'rest_framework',
-    'drf_yasg',
+    'drf_spectacular',
 
     'tasks',
 ]
@@ -104,6 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://www.django-rest-framework.org/api-guide/settings/
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # Internationalization
