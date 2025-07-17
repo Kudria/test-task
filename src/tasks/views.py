@@ -14,6 +14,7 @@ class TaskViewSet(
 ):
     queryset = Task.objects.all()
     filterset_fields = ('status',)
+    http_method_names = ['get', 'post', 'put', 'delete']
 
     def get_serializer_class(self):
         if self.action == 'update':
