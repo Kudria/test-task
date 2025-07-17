@@ -293,10 +293,22 @@
             "TaskUpdate": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "text": {
+                        "type": "string",
+                        "readOnly": true
+                    },
                     "status": {
                         "$ref": "#/components/schemas/StatusEnum"
                     }
-                }
+                },
+                "required": [
+                    "id",
+                    "text"
+                ]
             }
         },
         "securitySchemes": {
