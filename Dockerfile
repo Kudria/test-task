@@ -17,4 +17,4 @@ COPY uwsgi.ini .
 
 EXPOSE 8000
 
-CMD ["uwsgi", "--ini", "uwsgi.ini"]
+CMD python manage.py migrate && uwsgi --ini uwsgi.ini
