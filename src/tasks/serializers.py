@@ -9,7 +9,7 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'text',
-            'status'
+            'status',
         ]
 
 
@@ -17,5 +17,11 @@ class TaskUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = [
+            'id',
+            'text',
             'status'
+        ]
+        read_only_fields = [
+            'id',
+            'text',
         ]
